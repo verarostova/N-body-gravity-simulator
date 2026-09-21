@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <fstream>
 
 using namespace std;
 struct Vector3
@@ -44,6 +45,14 @@ int main()
     double dt = 1.0 / 730.5;
     double G = 4.0 * 3.141592653589793 * 3.141592653589793;
 
+    ofstream file("trajectory.csv");
+    file << "time,x,y,z\n";
+    double time = 0.0;
+
+    file << time<<","
+    << earth.position.x << ","
+    << earth.position.y << "," 
+    << earth.position.z << "\n";
 
     double r = sqrt(
         (sun.position.x - earth.position.x) * (sun.position.x - earth.position.x) +
@@ -78,7 +87,16 @@ int main()
     earth.position.x = earth.position.x + earth.velocity.x * dt;
     earth.position.y = earth.position.y + earth.velocity.y * dt;
     earth.position.z = earth.position.z + earth.velocity.z * dt;
-}
+     
+     time += dt;
+
+    file << time << ","
+     << earth.position.x << ","
+     << earth.position.y << ","
+     << earth.position.z << "\n";
+    }
+    
+    file.close();
 
 r = sqrt(
         (sun.position.x - earth.position.x) * (sun.position.x - earth.position.x) +
