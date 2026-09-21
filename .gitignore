@@ -1,6 +1,15 @@
 # Prerequisites
 *.d
 
+# Python virtual environment
+.venv/
+
+# Compiled executable
+nbody
+
+# Generated simulation data
+trajectory.csv
+
 # Compiled Object files
 *.slo
 *.lo
@@ -67,3 +76,7 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+.venv/
+nbody
+trajectory.csv
