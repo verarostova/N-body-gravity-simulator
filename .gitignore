@@ -79,4 +79,5 @@ Testing/
 
 .venv/
 nbody
-trajectory.csv
+trajectory.csvsfml_test
+/sfml_test
